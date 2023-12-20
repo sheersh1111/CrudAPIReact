@@ -2,9 +2,17 @@
 https://steady-trifle-87edbf.netlify.app/
 
 # Getting Started with Create React App
-![chrome-capture-2023-11-20-min](https://github.com/sheersh1111/Konti-task1/assets/106367218/6702b5cd-2303-4676-9cf0-b18ed206035e)
+![chrome-capture-2023-11-20 (1) (1)](https://github.com/sheersh1111/Konti-task1/assets/106367218/b2bb1757-f30d-44d5-96ca-70ecd48014db)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# Steps to setup
+
+1. Go to Command Prompt.
+2. cd Konti-task1
+3. npm i
+4. npm start
 
 ## Available Scripts
 
