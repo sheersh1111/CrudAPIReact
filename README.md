@@ -9,10 +9,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Steps to setup
 
-1. Go to Command Prompt.
-2. ### `cd Konti-task1`
-3. ### `npm i`
-4. ### `npm start`
+1. Clone this Repo.
+2. Go to Command Prompt.
+3. ### `cd Konti-task1`
+4. ### `npm i`
+5. ### `npm start`
 
 ## Available Scripts
 
