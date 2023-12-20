@@ -1,3 +1,6 @@
+# Deployed Link
+https://steady-trifle-87edbf.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
