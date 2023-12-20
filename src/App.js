@@ -52,7 +52,7 @@ function App() {
         !loading && (
           <Button
             variant="outline-secondary"
-            style={{ position: "absolute", right: "20px" }}
+            style={{ position: "absolute", right: "8vw" }}
             onClick={handleLoadMore}
           >
             Load More...

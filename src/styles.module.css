@@ -1,0 +1,13 @@
+
+  .image {
+    margin-left: 10px;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .image:hover {
+    transform: translateY(-5px);
+  }
+  
+  
