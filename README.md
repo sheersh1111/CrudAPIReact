@@ -1,4 +1,8 @@
+# Deployed Link
+https://steady-trifle-87edbf.netlify.app/
+
 # Getting Started with Create React App
+![chrome-capture-2023-11-20-min](https://github.com/sheersh1111/Konti-task1/assets/106367218/6702b5cd-2303-4676-9cf0-b18ed206035e)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
