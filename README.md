@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # Steps to setup
 
 1. Go to Command Prompt.
-2. cd Konti-task1
+2. ### `cd Konti-task1`
 3. ### `npm i`
 4. ### `npm start`
 
