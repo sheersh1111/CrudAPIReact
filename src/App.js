@@ -14,7 +14,6 @@ function App() {
       try {
         setLoading(true);
         const response = await axios.get(link);
-        console.log(response)
         setStories([...stories, ...response?.data?.data]);
       } catch (error) {
         console.error("Error fetching data:", error);
