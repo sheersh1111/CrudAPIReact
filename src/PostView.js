@@ -46,7 +46,7 @@ export function PostView() {
           >
             <Col md={2}>
               <img
-                src={post?.image}
+                src={post?.imageLink}
                 alt={""}
                 width={"200px"}
                 style={{ marginLeft: "10px", borderRadius: "10px" }}
