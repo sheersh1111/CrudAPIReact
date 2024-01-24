@@ -57,7 +57,7 @@ console.log(stories)
         {!moreDate ? (
         <span style={{color:'rgba(0,0,0,0.6)'}}>No more data to load</span>
       ) : (
-        !loading && (
+        !loading && stories.length>0 && (
           <Button
             variant="outline-secondary"
             style={{ position: "absolute", right: "8vw" }}
