@@ -9,7 +9,7 @@ const link = "http://127.0.0.1:8000/posts";
 
 function App() {
 
-  const [stories, setStories] = useState([]);
+  const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page,setPage]=useState(1);
   const [moreDate,setMoreData]=useState(true);
@@ -23,7 +23,7 @@ function App() {
         setLoading(true);
         const response = await axios.get(link);
         console.log(response?.data)
-        setStories([...stories, ...response?.data]);
+        setPosts([...posts, ...response?.data]);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -38,7 +38,7 @@ function App() {
     setLoading(true);
     const response=await axios.get(link+`?skip=${(page)*10}`);
     console.log(response)
-    setStories([...stories,...response?.data]);
+    setPosts([...posts,...response?.data]);
     if(response?.data?.length===0){
       setMoreData(false);
     }
@@ -51,7 +51,7 @@ function App() {
       <div className="App">
         <h2>Posts</h2>
         <Button variant="outline-secondary" style={{position:'relative',left:'37vw'}} onClick={()=>navigate('/create-post')}>Add New Post</Button>
-        {stories?.map((story) => {
+        {posts?.map((story) => {
           return (
             <PostCard
               index={story.id}
@@ -64,7 +64,7 @@ function App() {
         {!moreDate ? (
         <span style={{color:'rgba(0,0,0,0.6)'}}>No more data to load</span>
       ) : (
-        !loading && stories.length>0 && (
+        !loading && posts.length>0 && (
           <Button
             variant="outline-secondary"
             style={{ position: "absolute", right: "8vw" }}
