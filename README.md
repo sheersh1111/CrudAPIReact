@@ -1,4 +1,4 @@
-![chrome-capture-2024-0-24 (2)](https://github.com/sheersh1111/Konti-task1/assets/106367218/c3960bbc-2962-418e-ae4f-1473f3b13047)
+
 # Getting Started with Create React App
 ## Load more pagination
 ![chrome-capture-2023-11-20 (1) (1)](https://github.com/sheersh1111/Konti-task1/assets/106367218/b2bb1757-f30d-44d5-96ca-70ecd48014db)
@@ -8,7 +8,7 @@
 
 ## Create new post
 
-
+![chrome-capture-2024-0-24 (2)](https://github.com/sheersh1111/Konti-task1/assets/106367218/c3960bbc-2962-418e-ae4f-1473f3b13047)
 ## 
 
 
