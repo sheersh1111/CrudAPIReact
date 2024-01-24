@@ -1,8 +1,10 @@
 import { Card, Col, Row } from "react-bootstrap";
 import Styles from './styles.module.css'
 import { useNavigate } from "react-router-dom";
-export function StoryCard({ title, dek, image , index }) {
+export function PostCard({ title, body, image , index }) {
+
   const navigate =useNavigate();
+
   return (
     <div className="m-3" style={{ fontFamily: 'Roboto, sans-serif' }}>
       <Card style={{ width: '80vw', left: '10vw', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
@@ -21,7 +23,7 @@ export function StoryCard({ title, dek, image , index }) {
               />
             </Col>
             <Col md={7} className="mx-4" style={{ color: 'rgba(0, 0, 0, 0.6)' }}>
-              <span>{dek}</span>
+              <span>{body}</span>
             </Col>
           </Row>
         </Card.Body>

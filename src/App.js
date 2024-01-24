@@ -1,16 +1,22 @@
 import axios from "axios";
 import "./App.css";
 import { useEffect, useState } from "react";
-import { StoryCard } from "./StoryCard";
+import { PostCard } from "./PostCard";
 import { Button, Spinner } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+
 const link = "http://127.0.0.1:8000/posts";
+
 function App() {
+
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page,setPage]=useState(1);
   const [moreDate,setMoreData]=useState(true);
+
   const navigate=useNavigate();
+
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,6 +33,7 @@ function App() {
     fetchData();// eslint-disable-next-line
   }, []); 
 
+
   async function handleLoadMore(){
     setLoading(true);
     const response=await axios.get(link+`?skip=${(page)*10}`);
@@ -38,7 +45,7 @@ function App() {
     setPage(page+1);
     setLoading(false);
   }
-console.log(stories)
+  
 
     return (
       <div className="App">
@@ -46,10 +53,10 @@ console.log(stories)
         <Button variant="outline-secondary" style={{position:'relative',left:'37vw'}} onClick={()=>navigate('/create-post')}>Add New Post</Button>
         {stories?.map((story) => {
           return (
-            <StoryCard
+            <PostCard
               index={story.id}
               title={story?.title}
-              dek={story?.body}
+              body={story?.body}
               image={story?.imageLink}
             />
           );
