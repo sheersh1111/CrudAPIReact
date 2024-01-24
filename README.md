@@ -33,7 +33,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 1. Clone this Repo.
 2. Go to Command Prompt.
-3. ### `cd Konti-task1`
+3. ### `cd CrudAPIReact`
 4. ### `npm i`
 5. ### `npm start`
 
