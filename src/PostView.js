@@ -1,4 +1,4 @@
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Col, Row, Spinner } from "react-bootstrap";
 import Styles from "./styles.module.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -10,21 +10,34 @@ export function PostView() {
   const navigate = useNavigate();
   const [post, setPost] = useState(null);
   const [queryRan, setQueryRan] = useState(false);
+  const [loading,setLoading] = useState(true);
   
   const id = useParams();
 
   async function RunQuery() {
-    axios.get(`http://127.0.0.1:8000/posts/${id?.id}`).then((data) => {
-      console.log(data);
+    try{
+      
+      const data =await axios.get(`http://127.0.0.1:8000/posts/${id?.id}`)
+    console.log(data)
       setPost(data?.data);
       setQueryRan(true);
-    });
+      setLoading(false)
+    }catch(e){
+      toast.error(e?.response?.data?.detail);
+      navigate('/');
+    }
   }
 
   if (!queryRan) {
     RunQuery();
   }
-
+if(loading){
+  return(
+    <div style={{position:'relative',left:'50vw',top:'45vh'}}>
+      <Spinner/>
+    </div>
+  )
+}else{
   return (
     <div className="m-3" style={{ fontFamily: "Roboto, sans-serif" }}>
       <Card
@@ -74,7 +87,9 @@ export function PostView() {
                   variant="outline-danger"
                   className="mx-2"
                   onClick={async () => {
+                    setLoading(true)
                     await axios.delete(`http://127.0.0.1:8000/posts/${id?.id}`);
+                    setLoading(false)
                     toast.success("Post Deleted Successfully");
                     navigate("/");
                   }}
@@ -88,4 +103,6 @@ export function PostView() {
       </Card>
     </div>
   );
+}
+  
 }

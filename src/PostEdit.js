@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Col, Row, Form, Button } from "react-bootstrap";
+import { Col, Row, Form, Button, Spinner } from "react-bootstrap";
 import Styles from './styles.module.css';
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 export function PostEdit(){
     const [queryRan,setQueryRan]=useState(false);
-
+  const [loading,setLoading]=useState(true);
     const id=useParams();
 
     const navigate = useNavigate();
@@ -29,6 +29,10 @@ export function PostEdit(){
         console.log(data);
         setFormData(data?.data);
         setQueryRan(true);
+        setLoading(false);
+    }).catch((e)=>{
+      toast.error(e?.response?.data?.detail)
+      navigate('/')
     })
     
 }
@@ -53,6 +57,7 @@ if(!queryRan){
   };
 
   const handleSubmit = async(e) => {
+    setLoading(true)
     e.preventDefault();
 
     // Validate all fields before submitting
@@ -72,72 +77,81 @@ if(!queryRan){
       toast.success('Poast Updated Successfully');
       navigate('/');
     }
+    setLoading(false)
   };
 
-  return (
-    <Row
-      className="d-flex justify-content-between"
-      style={{ position:'relative',textAlign: "left",width:'90vw' ,left:'5vw' ,top:'5vh' }}
-    >
-        <h3 style={{position:'relative',left:'35vw'}}>Edit Post</h3>
-      <Col md={2} style={{paddingLeft:'10vh',paddingTop:'4vh'}}>
-        <img
-          src={"https://th.bing.com/th/id/OIP.MVbv2zRerfpzIkpqMlMRJAHaF7?rs=1&pid=ImgDetMain"}
-          alt="...loading"
-          width={"200px"}
-          style={{ marginLeft: "10px", borderRadius: "10px" }}
-          className={Styles.image}
-        />
-
-        
-      </Col>
-      <Col md={7} className="mx-4" style={{ color: "rgba(0, 0, 0, 0.6)" }}>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="formTitle" className="mb-2">
-            <Form.Label>Title</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter title"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-            />
-            <Form.Text className="text-danger">{formErrors.title}</Form.Text>
-          </Form.Group>
-
-          <Form.Group controlId="formContent" className="mb-2">
-            <Form.Label>Content</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={4}
-              placeholder="Enter content"
-              name="body"
-              value={formData.body}
-              onChange={handleChange}
-            />
-            <Form.Text className="text-danger">{formErrors.body}</Form.Text>
-          </Form.Group>
-
-          <Form.Group controlId="formImageLink" style={{marginBottom:'20px'}}>
-            <Form.Label>Image Link</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter image link"
-              name="imageLink"
-              value={formData.imageLink}
-              onChange={handleChange}
-            />
-            <Form.Text className="text-danger">
-              {formErrors.imageLink}
-            </Form.Text>
-          </Form.Group>
-
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
-      </Col>
-    </Row>
-  );
+  if(loading){
+    return(
+      <div style={{position:'relative',left:'50vw',top:'45vh'}}>
+        <Spinner/>
+      </div>
+    )
+  }else{
+    return (
+      <Row
+        className="d-flex justify-content-between"
+        style={{ position:'relative',textAlign: "left",width:'90vw' ,left:'5vw' ,top:'5vh' }}
+      >
+          <h3 style={{position:'relative',left:'35vw'}}>Edit Post</h3>
+        <Col md={2} style={{paddingLeft:'10vh',paddingTop:'4vh'}}>
+          <img
+            src={formData?.imageLink}
+            alt="...loading"
+            width={"300px"}
+            style={{ marginLeft: "10px", borderRadius: "10px" }}
+            className={Styles.image}
+          />
+  
+          
+        </Col>
+        <Col md={7} className="mx-4" style={{ color: "rgba(0, 0, 0, 0.6)" }}>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="formTitle" className="mb-2">
+              <Form.Label>Title</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter title"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
+              />
+              <Form.Text className="text-danger">{formErrors.title}</Form.Text>
+            </Form.Group>
+  
+            <Form.Group controlId="formContent" className="mb-2">
+              <Form.Label>Content</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={4}
+                placeholder="Enter content"
+                name="body"
+                value={formData.body}
+                onChange={handleChange}
+              />
+              <Form.Text className="text-danger">{formErrors.body}</Form.Text>
+            </Form.Group>
+  
+            <Form.Group controlId="formImageLink" style={{marginBottom:'20px'}}>
+              <Form.Label>Image Link</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter image link"
+                name="imageLink"
+                value={formData.imageLink}
+                onChange={handleChange}
+              />
+              <Form.Text className="text-danger">
+                {formErrors.imageLink}
+              </Form.Text>
+            </Form.Group>
+  
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    );
+  }
 
 }

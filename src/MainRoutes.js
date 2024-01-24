@@ -7,6 +7,7 @@ import { PostView } from "./PostView";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { PostEdit } from "./PostEdit";
+import { PageNotFound } from "./PageNotFound";
 export function MainRoutes(){
 
     return (
@@ -18,6 +19,7 @@ export function MainRoutes(){
             <Route path="/create-post" element={<PostForm/>}/>
             <Route path="/post/:id" element={<PostView/>}/>
             <Route path="/post/:id/edit"  element={<PostEdit/>}/>
+            <Route path="*" element={<PageNotFound />} />
         </Routes>
     </Router>
     </>
