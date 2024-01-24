@@ -1,8 +1,21 @@
-# Deployed Link
-https://steady-trifle-87edbf.netlify.app/
-
+![chrome-capture-2024-0-24 (2)](https://github.com/sheersh1111/Konti-task1/assets/106367218/c3960bbc-2962-418e-ae4f-1473f3b13047)
 # Getting Started with Create React App
+## Load more pagination
 ![chrome-capture-2023-11-20 (1) (1)](https://github.com/sheersh1111/Konti-task1/assets/106367218/b2bb1757-f30d-44d5-96ca-70ecd48014db)
+
+## Home page loading
+![chrome-capture-2024-0-24](https://github.com/sheersh1111/Konti-task1/assets/106367218/3cb2e211-4c23-4d99-a125-1967200a17f6)
+
+## Create new post
+
+
+## 
+
+
+## 
+
+
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
