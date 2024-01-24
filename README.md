@@ -7,14 +7,23 @@
 ![chrome-capture-2024-0-24](https://github.com/sheersh1111/Konti-task1/assets/106367218/3cb2e211-4c23-4d99-a125-1967200a17f6)
 
 ## Create new post
+![chrome-capture-2024-0-24 (1)](https://github.com/sheersh1111/Konti-task1/assets/106367218/f98e662f-13b4-4876-bed8-6c60631bf04a)
 
+
+## Flow for Home page to edit page for a post then also the update flow in second gif
 ![chrome-capture-2024-0-24 (2)](https://github.com/sheersh1111/Konti-task1/assets/106367218/c3960bbc-2962-418e-ae4f-1473f3b13047)
-## 
 
+![chrome-capture-2024-0-24 (3)](https://github.com/sheersh1111/Konti-task1/assets/106367218/8a5e4e03-5e05-4fb2-916f-8e66768b4e56)
 
-## 
+## Delete a post flow
 
+![chrome-capture-2024-0-24 (4)](https://github.com/sheersh1111/Konti-task1/assets/106367218/d0d2a442-c5a5-44ee-b22d-53199f5ffee8)
 
+## Post not found error handling
+![chrome-capture-2024-0-24 (5)](https://github.com/sheersh1111/Konti-task1/assets/106367218/53d1cea5-6cd5-48bd-91af-64dc66314206)
+
+## Page not found error handling
+![chrome-capture-2024-0-24 (6)](https://github.com/sheersh1111/Konti-task1/assets/106367218/2f9f4d5b-ec9b-4cab-84cb-45a1bd5c1811)
 
 
 
